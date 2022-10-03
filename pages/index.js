@@ -58,13 +58,10 @@ export default function index() {
       setX={setX}
     />,
   ];
-  const percent="4"
-// const value={`w-[${percent}%]`}
+  
   return (
     <div className=" flex flex-col justify-center items-center h-screen text-black bg-gradient-to-t from-lime-600 to-lime-900">
-      <div className="h-2 w-1/2 bg-gray-100 mb-5 rounded-full">
-      <div className={"bg-red-500 h-2 rounded-full "+ `w-[${percent}%]`} ></div>
-      </div>
+      <Progress/>
       <div>{componentList[page]}</div>
     </div>
   );

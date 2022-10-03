@@ -10,7 +10,7 @@ export default function Otherinfo({page, setPage, formData, setFormData, x, setX
         >
 
     <div className="flex flex-col border border-2px border-black rounded-md w-400 p-10 gap-5 bg-white">
-    <div className="text-xl text-center">Other Info</div>
+    <div className="text-xl text-center font-serif text-bold">OTHER INFO</div>
     <input
       type="text"
       placeholder="Highest Qualification"
@@ -32,14 +32,14 @@ onChange={(e) => setFormData({...formData, highestqualification: e.target.vlue})
       onChange={(e) => setFormData({...formData, about: e.target.value})}
       className=" border border-1px border-black rounded-md p-2"
     />
-    <div className='flex flex-col gap-3'>
-   <button className="border border-1px border-black rounded-md h-10 bg-lime-600" onClick={() => {alert('you have successfully submitted this form')}}>
-      Submit
-    </button>
-    <button className="border border-1px border-black rounded-md h-10 bg-lime-600" onClick={() => {
+    <div className='flex gap-3'>
+    <button className="border border-1px border-black rounded-md h-10 w-1/2 font-serif text-bold bg-lime-800 text-white hover:bg-white hover:text-black" onClick={() => {
           setPage(page - 1);  setX(-1000);
         }}>
-      Prev
+      PREV
+    </button>
+   <button className="border border-1px border-black rounded-md h-10 w-1/2 font-serif text-bold bg-lime-800 text-white hover:bg-white hover:text-black" onClick={() => {alert('you have successfully submitted this form')}}>
+      SUBMIT
     </button>
     </div>
   </div>
