@@ -9,7 +9,7 @@ function Signup({ page, setPage, formData, setFormData, x, setX}) {
           animate={{ x: 0 }}
         >
 
-    <div className="flex flex-col border border-2px border-black rounded-md w-50vw  px-14 py-3 gap-5 bg-white">
+    <div className="flex flex-col items-center border border-2px border-black rounded-md w-[100vh] px-14 py-3 gap-5 bg-white">
       {/* <div className="flex flex-col"> */}
 
       <div className="text-xl text-center font-serif text-bold">SIGN-UP INFO</div>
@@ -18,24 +18,24 @@ function Signup({ page, setPage, formData, setFormData, x, setX}) {
         placeholder="Full Name"
         value={formData.fullname}
         onChange={(e) => setFormData({...formData, fullname: e.target.value})}
-        className=" border border-b  border-b-black  p-2 " 
+        className=" border border-b  border-b-black  p-2 w-1/2" 
       />
       <input
         type="text"
         placeholder="Username"
         value={formData.username}
         onChange={(e) => setFormData({...formData, username: e.target.value})}
-        className=" border border-b  border-b-black  p-2 "
+        className=" border border-b  border-b-black  p-2 w-1/2"
       />
       <input
         type="text"
         placeholder="Password"
         value={formData.password}
         onChange={(e)=> setFormData({...formData, password: e.target.value})}
-        className="  border border-b  border-b-black  p-2 "
+        className="  border border-b  border-b-black  p-2 w-1/2"
       />
       <button
-        className="border border-1px border-black rounded-md font-serif text-bold bg-lime-800 text-white hover:bg-white hover:text-black h-10"
+        className="border border-1px border-black rounded-md font-serif text-bold bg-lime-800 text-white hover:bg-white hover:text-black h-10 w-20"
         onClick={() => {
           setPage(page + 1);
           setX(1000);
