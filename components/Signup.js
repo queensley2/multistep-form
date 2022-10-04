@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 function Signup({ page, setPage, formData, setFormData, x, setX}) {
