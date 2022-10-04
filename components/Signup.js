@@ -9,7 +9,7 @@ function Signup({ page, setPage, formData, setFormData, x, setX}) {
           animate={{ x: 0 }}
         >
 
-    <div className="flex flex-col items-center border border-2px border-black rounded-md w-[100vh] px-14 py-3 gap-5 bg-white">
+    <div className="flex flex-col items-center border border-2px border-black rounded-md w-[150vh] h-[60vh] px-14 py-3 gap-10 bg-white">
       {/* <div className="flex flex-col"> */}
 
       <div className="text-xl text-center font-serif text-bold">SIGN-UP INFO</div>

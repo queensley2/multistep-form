@@ -9,13 +9,13 @@ export default function Otherinfo({page, setPage, formData, setFormData, x, setX
           animate={{ x: 0 }}
         >
 
-    <div className="flex flex-col items-center border border-2px border-black rounded-md w-[100vh] p-10 gap-5 bg-white">
+    <div className="flex flex-col items-center border border-2px border-black rounded-md w-[150vh] h-[60vh] p-10 gap-5 bg-white">
     <div className="text-xl text-center font-serif text-bold">OTHER INFO</div>
     <input
       type="text"
       placeholder="Highest Qualification"
 value={formData.highestqualification}
-onChange={(e) => setFormData({...formData, highestqualification: e.target.vlue})}
+onChange={(e) => setFormData({...formData, highestqualification: e.target.value})}
       className=" border border-b border-b-black  p-2 w-1/2"
     />
     <input

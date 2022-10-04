@@ -9,7 +9,7 @@ export default function Locationinfo({page, setPage, formData, setFormData, x, s
           animate={{ x: 0 }}
         >
 
-    <div className="flex flex-col items-center border border-2px border-black rounded-md w-[100vh] p-10 gap-5 bg-white">
+    <div className="flex flex-col items-center border border-2px border-black rounded-md w-[150vh] h-[60vh] p-10 gap-10 bg-white">
     <div className="text-xl text-center font-serif text-bold">LOCATION INFO</div>
     <input
       type="text"
