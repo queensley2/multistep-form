@@ -16,21 +16,21 @@ export default function Otherinfo({page, setPage, formData, setFormData, x, setX
       placeholder="Highest Qualification"
 value={formData.highestqualification}
 onChange={(e) => setFormData({...formData, highestqualification: e.target.vlue})}
-      className=" border border-1px border-black rounded-md p-2"
+      className=" border border-b border-b-black  p-2"
     />
     <input
       type="text"
       placeholder="Occupation"
       value={formData.occupation}
       onChange={(e) => setFormData({...formData, occupation: e.target.value})}
-      className=" border border-1px border-black rounded-md p-2"
+      className=" border border-b border-b-black  p-2"
     />
     <textarea
       type="text"
       placeholder="About"
       value={formData.about}
       onChange={(e) => setFormData({...formData, about: e.target.value})}
-      className=" border border-1px border-black rounded-md p-2"
+      className=" border border-b border-b-black  p-2"
     />
     <div className='flex gap-3'>
     <button className="border border-1px border-black rounded-md h-10 w-1/2 font-serif text-bold bg-lime-800 text-white hover:bg-white hover:text-black" onClick={() => {

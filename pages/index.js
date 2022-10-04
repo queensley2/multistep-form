@@ -63,7 +63,7 @@ export default function Index() {
   ];
 
   return (
-    <div className=" flex flex-col justify-center items-center h-screen text-black bg-gradient-to-t from-lime-600 to-lime-900">
+    <div className=" flex flex-col justify-center items-center h-screen  text-black bg-gradient-to-t from-lime-600 to-lime-900">
       <Progress value={20} />
       <div>{componentList[page]}</div>
     </div>

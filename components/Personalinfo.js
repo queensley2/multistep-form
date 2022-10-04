@@ -16,14 +16,14 @@ export default function Personalinfo({page, setPage, formData, setFormData, x, s
       placeholder="Nickname"
       value={formData.nickname}
       onChange={(e) =>setFormData({...formData, nickname:e.target.value})}
-      className=" border border-1px border-black rounded-md p-2"
+      className=" border border-b border-b-black  p-2"
     />
     <input
       type="text"
       placeholder="Email"
       value={formData.email}
       onChange={(e) => setFormData({...formData, email:e.target.value})}
-      className=" border border-1px border-black rounded-md p-2"
+      className=" border border-b border-b-black  p-2"
     />
     <div className='flex gap-3'>
    <button className="border border-1px border-black rounded-md h-10 w-1/2 font-serif text-bold bg-lime-800 text-white hover:bg-white hover:text-black" onClick={() => {
