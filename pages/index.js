@@ -9,7 +9,12 @@ export default function Index() {
   const [page, setPage] = useState(0);
 
   const [x, setX] = useState(0);
+  // const [isSubmit, setIsSubmit] = useState(false);
 
+  // const [error, setError] = useState({
+  
+//  })
+  
   const [formData, setFormData] = useState({
     fullname: "",
     username: "",
@@ -23,6 +28,7 @@ export default function Index() {
     about: "",
   });
 
+  
   const componentList = [
     <Signup
       key={page}
