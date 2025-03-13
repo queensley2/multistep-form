@@ -1,11 +1,34 @@
 import React from 'react'
-import {motion} from 'framer-motion'
+import {motion} from 'framer-motion';
+import { useState } from "react";
 
-export default function Locationinfo({page, setPage, formData, setFormData, x, setX}) {
+
+export default function Locationinfo({page, setPage, formData, setFormData, x, setX, updateFormData}) {
+
+  
+  const [error, setError] = useState("");
+
+  const [localData, setLocalData] = useState({
+    Address: formData.address,
+    country: formData.nationality,
+    
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+const validate = (formData) => {
+  if(!formData.address) return "Address required";
+  if(!formData.nationality) return "Nationality required"; 
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.nickname || !formData.email) return;
+    if (!formData.address || !formData.nationality) {
+      setError(validate(formData));
+      return;
+    }
 
     setPage(page + 1);
     setX(1000);
@@ -26,25 +49,24 @@ export default function Locationinfo({page, setPage, formData, setFormData, x, s
           onSubmit={handleSubmit}
         >
           <input
-            required
+          name='address'
+            id='Add'
             type="text"
             placeholder="Address"
             value={formData.address}
-            onChange={(e) =>
-              setFormData({ ...formData, address: e.target.value })
-            }
+            onChange={handleChange}
             className="  border border-b  border-b-black  p-2 md:w-1/2 "
           />
           <input
-            required
+          name='nationality'
+            id='Nty'
             type="text"
             placeholder="Nationality"
             value={formData.nationality}
-            onChange={(e) =>
-              setFormData({ ...formData, nationality: e.target.value })
-            }
+            onChange={handleChange}
             className="  border border-b  border-b-black  p-2 md:w-1/2"
           />
+          <div className='text-red-500 text-xs'>{error}</div>
           <div className="flex  gap-10">
             <button
               className="border border-1px border-lime-800 rounded-md h-10 w-20 font-serif text-bold bg-lime-800 text-white hover:bg-white hover:text-black hover:border-black"
@@ -55,7 +77,9 @@ export default function Locationinfo({page, setPage, formData, setFormData, x, s
             >
               PREV
             </button>
-            <button className="border border-1px border-lime-800 rounded-md h-10 w-20 font-serif text-bold bg-lime-800 text-white hover:bg-white hover:text-black hover:border-black">
+            <button className="border border-1px border-lime-800 rounded-md h-10 w-20 font-serif text-bold bg-lime-800 text-white hover:bg-white hover:text-black hover:border-black"
+            //  onClick={saveFile}
+             >
               NEXT
             </button>
           </div>

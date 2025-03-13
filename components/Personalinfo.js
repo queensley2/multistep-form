@@ -1,14 +1,46 @@
-import React from 'react'
-import {motion} from 'framer-motion'
+import React from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
-export default function Personalinfo({page, setPage, formData, setFormData, x, setX}) {
+
+export default function Personalinfo({
+  page,
+  setPage,
+  formData,
+  setFormData,
+  x,
+  setX,
+
+}) {
+ 
+    const [error, setError] = useState("");
+
+    const [localData, setLocalData] = useState({
+      Email: formData.email,
+      nickname: formData.nickname,
+      
+    });
+
+    const handleChange = (e) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+  const validate = (formData) => {
+    if (!formData.nickname) return "nickname is required";
+    if (!formData.email) return "email is required";
+    
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(!formData.nickname || !formData.email) return;
-    setPage(page+1);
-    setX(1000)
-  }
+    if (!formData.nickname || !formData.email) {
+      setError(validate(formData));
+      return;
+    }
+
+    setPage(page + 1);
+    setX(1000);
+  };
   return (
     <motion.div
       initial={{ x: x }}
@@ -24,25 +56,24 @@ export default function Personalinfo({page, setPage, formData, setFormData, x, s
           onSubmit={handleSubmit}
         >
           <input
-            required
+          name="nickname"
+          id="Nck"
             type="text"
             placeholder="Nickname"
             value={formData.nickname}
-            onChange={(e) =>
-              setFormData({ ...formData, nickname: e.target.value })
-            }
+            onChange={handleChange}
             className=" border border-b border-b-black  p-2 md:w-1/2"
           />
           <input
-            required
+          name="email"
+           id="Email" 
             type="text"
             placeholder="Email"
             value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
+            onChange={handleChange}
             className=" border border-b border-b-black  p-2 md:w-1/2"
           />
+          <div className="text-red-500 text-xs">{error}</div>
           <div className="flex gap-10">
             <button
               className="border border-1px border-lime-800 rounded-md h-10 w-20 font-serif text-bold bg-lime-800 text-white hover:bg-white hover:text-black hover:border-black"
@@ -53,7 +84,8 @@ export default function Personalinfo({page, setPage, formData, setFormData, x, s
             >
               PREV
             </button>
-            <button className="border border-1px border-lime-800 rounded-md h-10 w-20 font-serif text-bold bg-lime-800 text-white hover:bg-white hover:text-black hover:border-black">
+            <button className="border border-1px border-lime-800 rounded-md h-10 w-20 font-serif text-bold bg-lime-800 text-white hover:bg-white hover:text-black hover:border-black" >
+            {/* // onClick={saveFile} */}
               NEXT
             </button>
           </div>
